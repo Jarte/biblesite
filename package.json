@@ -1,0 +1,25 @@
+{
+  "name": "biblesite",
+  "version": "1.0.0",
+  "description": "landing page for share bible with the nations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarte/biblesite.git"
+  },
+  "author": "jarmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jarte/biblesite/issues"
+  },
+  "homepage": "https://github.com/Jarte/biblesite#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

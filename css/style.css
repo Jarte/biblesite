@@ -3,8 +3,20 @@ COLORS:
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
+medium yellow: #e7c506
 */
+/* variables */
+:root{
+    --primary:
+    --secondary:
+}
 
+/* reset */
+
+/* base styles */
+
+
+/*  */
 * {
     margin: 0;
     padding: 0;
@@ -14,14 +26,14 @@ Dark green: #28b485
 body {
     font-family: lato, sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /*font-size: 14px;*/
     line-height: 1.7;
     color: #777;
     padding: 30px;
 }
 
 .header {
-    height: 95vh;
+    height: 100vh;
     background-image: linear-gradient(
         to right bottom,
          rgba(231, 197, 6, 0.5),
@@ -29,22 +41,24 @@ body {
         url(../img/bible2.jpg);
     background-size: cover;
     background-position: top;
-    position: relative;     
-    clip-path: polygon(0 0, 100% 0, 100% 71%, 0% 100%);
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 71%, 0% 100%);     
+
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 40px;
     left: 40px;
+    right: 40px;
 
 }
 
-.logo {
+.header__logo {
     height: 75px;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -59,26 +73,22 @@ body {
     backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
+    padding: 20px;
     display: block;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 400px;
-    letter-spacing: 35px;
-    
-  
-
+    letter-spacing: 5px;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700px;
-    letter-spacing: 15px;
     margin-bottom: 18px;
-
     animation-name: moveInRight;
     animation-duration:1s;
     animation-timing-function: ease-out;
@@ -117,17 +127,32 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+
+    }
+
+}
+
 .btn:link,
 .btn:visited {
     font-size: 20px;
     font-color: #000000;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
+    padding: 10px 10px;
+    display: float;
     border-radius: 100px;
     transition: all .2s;
     position: relative;
+    top: 40%;
 
 }
 
@@ -141,28 +166,64 @@ body {
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-.btn-black {
-    color: #fff;
+.btn--white {
+    color: #000000;
+    font-weight: bold;
 
 }
 
-,btn::after {
+.btn::after {
     content: "";
-    display: inline-block;
+    display: float;
     height: 100%;
     width: 100%;
     border-radius: 100px;
     position: absolute;
     top: 0;
-    left:0;
-    z-index: -1 ;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
 }
 
-.btn-black::after {
-    background-color: #000000;
+/* mobile styles */
+
+
+
+/* small tablet styles */
+@media screen and (min-width: 620px){
+    body{
+        font-size: 18px;
+
+    }
+}
+
+/* large tablets & laptop styles */
+@media screen and (min-width: 960px){
+    body{
+        font-size: 20px;
+
+    }
+}
+
+
+/* desktop styles */
+@media screen and (min-width: 1200px){
 
 }
 
-.btn:hover::after {
-    transform: scale(2);
+.Ep1header h1{
+    text-align: center;
+    color: #000000;
+}
+
+
+/*.btn:hover::after {
+    background-color: black;
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
 }
